@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="../../public/css/results.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <% include ../includes/nav.ejs %>
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1><%= title %></h1>
+    <% for(var i=0; i<parsingJsonObj.length; i++) {%>
+      <% if(i % 3 == 0) { %> 
+         <div class="card-deck">
+      <% } %>
+            <div class="card cCard">
+               <img src="<%= parsingJsonObj[i].imageUrl %>" class="card-img-top cImage">
+               <div class="card-body">
+                  <h5 class="card-title"><%= parsingJsonObj[i].name %></h5>
+                  <h6><%= parsingJsonObj[i].price %></h6>
+                  <p class="card-text cText"><%= parsingJsonObj[i].description %></p>
+               </div>
+            </div>
+      <% if(i % 3 == 2) { %> 
+         </div>
+         <br>
+      <% } %>   
+   <% } %>
+   
+    <p>This is the placeholder for Team Activity 03</p>
+  </div>
+</div>
+<div class="container">
+  
+</div>
+
+
+</body>
+</html>
