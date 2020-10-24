@@ -2,12 +2,12 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const csrf = require('csurf');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URL || "mongodb+srv://Whitney-Chase-01:nitney15020@cluster01.clet0.mongodb.net/products?retryWrites=true&w=majority"
+const MONGODB_URI = process.env.MONGODB_URL || 'mongodb+srv://Whitney-Chase-01:nitney15020@cluster01.clet0.mongodb.net/products?retryWrites=true&w=majority'
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
-const csrf = require('csurf');
 const flash = require('connect-flash');
 
 const errorController = require('./controllers/error');
